@@ -1,13 +1,23 @@
 $(function () {
 
     $('.main_slide').slick({
-        vertical: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
         arrows: false,
-        dots: true,
+        autoplay: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
 
+    });
+
+
+    // mian_visual 화살표← →
+    $('.main_visual .arrows .prev').on('click', function () {
+        $('.main_slide').slick('slickPrev')
     })
+    $('.main_visual .arrows .next').on('click', function () {
+        $('.main_slide').slick('slickNext')
+    });
+
+
 
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
